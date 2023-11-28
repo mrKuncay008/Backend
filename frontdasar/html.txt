@@ -1,0 +1,166 @@
+﻿
+ Pengenalan HTML 
+
+( Hypertext Markup Laguege)
+
+- html seperti struktur / fondasi jadi murni kerangka html
+- Css fungsi nya untuk menata atau mempercantik kerangka
+- javaScript lebih fungsi dari kerangka itu atau jalan nya sebuah web
+
+ Element: 
+	- <h1> untuk judul (Semakin besar h nya maka semakin kecil tulisannya)
+	- <br> untuk garis baru
+	- <f> untuk formulir
+	- <head> untuk membuat bagian head
+	- <body> untuk bagian body
+	- <i--  komentar -->
+	- <!DOCTYPE html> untuk dklarasi dokument
+	- <title> judul web 
+	- <p> untuk paragaph
+	- <i> untuk garis miring
+	- <b> untuk tebal
+	- <u> untuk garis bawah
+	- <a> untuk membuat link
+		- tag ini wajib dengan 'herf' jadi <a herf="link">
+	- <img> untuk gambar
+		- khusus img adalah 'src' jadi <img src="file.jpg" widht="lebar" height="tinggi" /> 
+
+
+contoh:
+
+
+
+
+
+elment lainnya
+
+
+accesskey
+
+	Menentukan tombol shortcut untuk mengaktifkan atau fokus pada elemen
+
+class
+	Menentukan class CSS yang akan digunakan
+
+contenteditable
+	Menentukan isi elemen bisa diedit atau tidak
+
+data-*
+	Digunakan untuk menyimpan data
+
+dir
+	Menentukan arah teks dari elemen (kiri ke kanan atau sebaliknya)
+
+draggable
+	Menentukan apakah elemen bisa di drag atau tidak
+
+hidden
+	untuk menyembunyikan elemen
+
+id
+	Menentukan id unik untuk elemen
+
+lang
+	Menentukan bahasa yang digunakan untuk isi elemen
+
+spellcheck
+	Menentukan apakah isi elemen harus dilakukan pengejaan grammer atau tudak
+
+style
+	Menentukan inline CSS untuk elemen
+
+tabindex
+	Menentukan urutan atau indeks tab dari elemen (saat tombol tab ditekan)
+
+title
+	Menentukan informasi tambahan tentang elemen
+
+translate
+	Menentukan apakah konten dari elemen bisa diterjemahkan atau tidak
+
+Atribut Event untuk java script
+
+
+Nama atribut Nilai
+Fungsi: Menjalankan script
+
+onafterprint
+	kode javascript
+		setelah dokumen dicetak
+
+onbeforeprint
+	kode javascript
+		sebelum dokumen dicetak
+
+onbeforeunload
+	kode javascript
+		sebelum saat dokumen tidak ter-load
+
+onerror
+	kode javascript
+		saat terjadi error
+
+onhashchange
+	kode javascript
+		saat terjadi perubahan pada bagian anchor di URL
+
+onload
+	kode javascript
+		setelah loading selesai
+
+onmessage
+	kode javascript
+		saat ada pesan
+
+onoffline
+kode javascript
+		saat tiba-tiba offline
+
+ononline
+	kode javascript
+		saat tiba-tiba online
+
+onpagehide
+	kode javascript
+		saat user tidak sedang membuka halaman web
+
+onpageshow
+	kode javascript
+		saat user membuka kembali halaman web
+
+onpopstate
+	kode javascript
+		saat history browser berubah
+
+onresize
+	kode javascript
+		saat ukuran jendela browser berubah
+
+onstorage
+	kode javascript
+		saat area penyimpanan (Web Storage) di-update
+
+onunload
+	kode javascript
+		saat web browser ditutup
+
+Elemnt khusus
+
+
+Nama atribut Bisa dipakai di tag
+src
+	<audio>, <embed>, <iframe>, <img>, dll
+href
+	<a>, <link>
+action
+	<form>
+autoplay
+	<audio>, <video>
+
+
+Gunkan tanda petik untuk mengisi nilai atribut yang mengandung teks.
+Mengapa?
+Karena jika terdapat lebih dari satu kata, ia akan menciptakan spasi dan akan dianggap sebagai atribut baru.
+Tanda petik yang digunakan, boleh petik ganda (") dan juga petik tunggal (').
+Nah untuk nilai angka, boleh pakai tanda petik dan juga boleh tidak.
+

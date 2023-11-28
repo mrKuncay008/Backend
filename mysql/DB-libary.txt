@@ -1,0 +1,64 @@
+Pustaka konektor database adalah komponen perangkat lunak yang memungkinkan bahasa pemrograman berinteraksi dengan sistem manajemen basis data (DBMS). 
+Pustaka menyediakan API (Application Programming Interface) yang memungkinkan bahasa pemrograman untuk terhubung ke database, mengirim perintah SQL, 
+dan mengambil hasil perintah.
+
+Dua pustaka konektor database yang paling populer adalah JDBC (Java Database Connectivity) dan ODBC (Open Database Connectivity).
+
+JDBC adalah API berbasis Java untuk berinteraksi dengan database. 
+Ini memungkinkan program Java untuk terhubung ke berbagai database relasional dan menjalankan perintah SQL.
+
+ODBC adalah API yang banyak digunakan untuk menghubungkan ke database dari program berbasis Windows. 
+Ini ditulis dalam C dan menyediakan antarmuka tingkat rendah untuk mengirim perintah SQL ke database dan mengembalikan hasilnya.
+
+Baik JDBC dan ODBC secara luas didukung oleh banyak basis data relasional dan dapat digunakan untuk berinteraksi dengan basis data yang berbeda dengan perubahan kode 
+minimal.
+Perlu dicatat bahwa ada konektor lain juga, tergantung pada DBMS yang Anda gunakan, seperti ADODB untuk MS Access, OLEDB untuk MS SQL server dan sebagainya.
+
+Contoh libary JDBC / API berbasis java:
+
+import java.sql.*;
+
+public class JDBCExample {
+    public static void main(String[] args) {
+        try {
+            // Load the JDBC driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // Connect to the database
+            Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/mydatabase", "username", "password");
+
+            // Create a statement
+            Statement statement = connection.createStatement();
+
+            // Execute a SELECT query
+            ResultSet result = statement.executeQuery("SELECT * FROM mytable");
+
+            // Iterate through the result set and print the results
+            while (result.next()) {
+                System.out.println(result.getString(1) + " " + result.getString(2));
+            }
+
+            // Close the statement and connection
+            statement.close();
+            connection.close();
+        } catch (ClassNotFoundException e) {
+            System.err.println("Could not find the JDBC driver class.");
+        } catch (SQLException e) {
+            System.err.println("An error occurred while communicating with the database.");
+        }
+    }
+}
+
+Dalam contoh ini, langkah pertama adalah memuat driver JDBC untuk sistem manajemen database tertentu (dalam hal ini, MySQL) menggunakan metode ini.
+Selanjutnya, program membuat koneksi ke database menggunakan metode, meneruskan URL database, nama pengguna, dan kata sandi. Setelah koneksi dibuat,
+program dapat membuat objek, yang digunakan untuk menjalankan perintah SQL pada database.Class.forName()DriverManager.getConnection()Statement
+
+Dalam hal ini, program menjalankan kueri SELECT menggunakan metode dan menyimpan hasilnya dalam objek. Program kemudian dapat mengulangi melalui , menggunakan metode,
+dan mengambil nilai kolom dari setiap baris yang dikembalikan oleh kueri.executeQuery()ResultSetResultSetnext()
+
+Akhirnya, program menutup dan objek untuk melepaskan sumber daya.StatementConnection
+
+Perlu dicatat bahwa Ini adalah contoh yang disederhanakan untuk tujuan demonstrasi, untuk kode produksi 
+Anda harus menangani skenario yang lebih maju seperti penanganan kesalahan dan menambahkan lebih banyak lapisan abstraksi. 
+Juga URL konektivitas dan detail lainnya akan berbeda tergantung pada RDBMS tertentu.

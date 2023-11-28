@@ -1,0 +1,19 @@
+Di PHP, superglobal adalah variabel standar yang tersedia di semua cakupan di seluruh skrip PHP.  Ini berarti Anda dapat mengakses variabel-variabel ini dari fungsi, kelas, atau file apa pun tanpa harus melakukan sesuatu yang khusus.  Bahasa PHP menyediakan beberapa superglobal, yang tercantum di bawah ini: 
+
+    $_SERVER: Berisi informasi tentang server dan lingkungan eksekusi 
+
+    $_GET: Berisi variabel yang diteruskan ke skrip saat ini melalui metode HTTP GET 
+
+    $_POST: Berisi variabel yang diteruskan ke skrip saat ini melalui metode HTTP POST 
+
+    $_FILES: Berisi informasi tentang file yang diunggah 
+
+    $_COOKIE: Berisi variabel yang diteruskan ke skrip saat ini melalui cookie HTTP 
+
+    $_SESSION: Berisi variabel sesi yang tersedia untuk skrip saat ini 
+
+    $_REQUEST: Berisi isi dari $_GET, $_POST, dan $_COOKIE
+
+    $_ENV: Berisi variabel lingkungan 
+
+    $_GLOBALS: Berisi referensi ke setiap variabel yang saat ini didefinisikan dalam lingkup global skrip 

@@ -1,0 +1,325 @@
+mysql> create databases Klinik_kucing;
+Query OK, 1 row affected (0.00 sec)
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| Klinik_kucing      |
+| information_schema |
+| mrkuncay           |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sys                |
++--------------------+
+7 rows in set (0,01 sec)
+
+mysql> use Klinik_kucing;
+Database changed
+
+mysql> create table infoprib 
+    -> (nik varchar (6) primary key,
+    -> Nama varchar (5),
+    -> Alamat varchar (10),
+    -> tgl_lahir date,
+    -> Jenis_kelamin char(1));
+Query OK, 0 rows affected (1,32 sec)
+
+mysql> desc infoprib;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| nik           | varchar(6)  | NO   | PRI | NULL    |       |
+| Nama          | varchar(5)  | YES  |     | NULL    |       |
+| Alamat        | varchar(10) | YES  |     | NULL    |       |
+| tgl_lahir     | date        | YES  |     | NULL    |       |
+| Jenis_kelamin | char(1)     | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0,00 sec)
+mysql> alter table infoprib  
+    -> add
+    -> Penyakit varchar(12);
+Query OK, 0 rows affected (1,00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc infoprib;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| nik           | varchar(6)  | NO   | PRI | NULL    |       |
+| Nama          | varchar(5)  | YES  |     | NULL    |       |
+| Alamat        | varchar(10) | YES  |     | NULL    |       |
+| tgl_lahir     | date        | YES  |     | NULL    |       |
+| Jenis_kelamin | char(1)     | YES  |     | NULL    |       |
+| Penyakit      | varchar(12) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+6 rows in set (0,00 sec)
+mysql> insert into infoprib
+    -> values
+    -> ('412332','kuncay','cipondoh','2021-03-21','J','pilek');
+Query OK, 1 row affected (0,15 sec)
+
+mysql> select * from infoprib
+    -> ;
++--------+--------+----------+------------+---------------+----------+
+| nik    | Nama   | Alamat   | tgl_lahir  | Jenis_kelamin | Penyakit |
++--------+--------+----------+------------+---------------+----------+
+| 412332 | kuncay | cipondoh | 2021-03-21 | J             | pilek    |
++--------+--------+----------+------------+---------------+----------+
+1 row in set (0,01 sec)
+ysql> select * from infoprib
+    -> ;
++--------+--------+----------+------------+---------------+----------+
+| nik    | Nama   | Alamat   | tgl_lahir  | Jenis_kelamin | Penyakit |
++--------+--------+----------+------------+---------------+----------+
+| 412332 | kuncay | cipondoh | 2021-03-21 | J             | pilek    |
+| 41234  | pony   | cikokol  | 2019-03-18 | J             | batuk    |
+| 41235  | celsi  | cikokol  | 2019-01-17 | B             | mandul   |
+| 412353 | pony   | cikokol  | 2019-03-18 | J             | batuk    |
++--------+--------+----------+------------+---------------+----------+
+4 rows in set (0,00 sec)
+
+mysql> delete from infoprib 
+    -> where
+    -> nik='41234';
+Query OK, 1 row affected (0,11 sec)
+
+mysql> select * from infoprib
+    -> ;
++--------+--------+----------+------------+---------------+----------+
+| nik    | Nama   | Alamat   | tgl_lahir  | Jenis_kelamin | Penyakit |
++--------+--------+----------+------------+---------------+----------+
+| 412332 | kuncay | cipondoh | 2021-03-21 | J             | pilek    |
+| 41235  | celsi  | cikokol  | 2019-01-17 | B             | mandul   |
+| 412353 | pony   | cikokol  | 2019-03-18 | J             | batuk    |
++--------+--------+----------+------------+---------------+----------+
+3 rows in set (0,00 sec)
+
+mysql> show tables;
++-------------------------+
+| Tables_in_Klinik_kucing |
++-------------------------+
+| infoprib                |
++-------------------------+
+1 row in set (0,00 sec)
+
+mysql> select * from infoprib
+    -> ;
++--------+--------+----------+------------+---------------+----------+
+| nik    | Nama   | Alamat   | tgl_lahir  | Jenis_kelamin | Penyakit |
++--------+--------+----------+------------+---------------+----------+
+| 412332 | kuncay | cipondoh | 2021-03-21 | J             | pilek    |
+| 41235  | celsi  | cikokol  | 2019-01-17 | B             | mandul   |
+| 412353 | pony   | cikokol  | 2019-03-18 | J             | batuk    |
+| 412364 | blacky | joglo    | 2019-02-17 | J             | katarak  |
++--------+--------+----------+------------+---------------+----------+
+4 rows in set (0,00 sec)
+
+
+mysql> create table gudang
+     -> (lotnum varchar (5) primary key, Namabarang varchar (10), Expd date)
+     -> ;
+
+Query OK, 0 rows affected (1.62 sec)
+
+mysql> desc gudang;
+
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| lotnum     | varchar(5)  | NO   | PRI | NULL    |       |
+| Namabarang | varchar(10) | YES  |     | NULL    |       |
+| Expd       | date        | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into gudang
+    -> values
+    -> ('2039','HbsAg','2023-04-02');
+Query OK, 1 row affected (0.37 sec)
+
+
+mysql> select * from gudang;
++--------+------------+------------+
+| lotnum | Namabarang | Expd       |
++--------+------------+------------+
+| 2039   | HbsAg      | 2023-04-02 |
++--------+------------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> insert into gudang
+    -> values
+    -> ('2037','Hiv','2023-04-13');
+Query OK, 1 row affected (0.40 sec)
+
+
+mysql> select * from gudang;
++--------+------------+------------+
+| lotnum | Namabarang | Expd       |
++--------+------------+------------+
+| 2037   | Hiv        | 2023-04-13 |
+| 2039   | HbsAg      | 2023-04-02 |
++--------+------------+------------+
+2 rows in set (0.00 sec)
+
+
+
+ysql> insert into gudang values ('2024','Hcv','2024-06-10');
+Query OK, 1 row affected (0.37 sec)
+
+mysql> select * from gudang;
++--------+------------+------------+
+| lotnum | Namabarang | Expd       |
++--------+------------+------------+
+| 2024   | Hcv        | 2024-06-10 |
+| 2037   | Hiv        | 2023-04-13 |
+| 2039   | HbsAg      | 2023-04-02 |
++--------+------------+------------+
+3 rows in set (0.00 sec)
+
+
+mysql> select * from gudang where lotnum='2039';
++--------+------------+------------+
+| lotnum | Namabarang | Expd       |
++--------+------------+------------+
+| 203   | HbsAg      | 2023-04-02 |
++--------+------------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> select * from gudang where Expd='2023-04-13';
++--------+------------+------------+
+| lotnum | Namabarang | Expd       |
++--------+------------+------------+
+| 2037   | Hiv        | 2023-04-13 |
++--------+------------+------------+
+1 row in set (0.00 sec)
+
+// Mencari / search
+
+mysql> select * from Cpp
+    -> order by Tanggal_buat;
++----+------------+--------------+
+| no | Type       | Tanggal_buat |
++----+------------+--------------+
+| 01 | for-loop   | 2022-06-10   |
+| 03 | While-loop | 2022-06-28   |
+| 04 | Array      | 2022-07-19   |
+| 02 | Condition  | 2022-07-20   |
+| 08 | Nested     | 2022-10-03   |
+| 09 | Switch     | 2022-10-03   |
+| 10 | else-if    | 2022-10-10   |
+| 07 | Precrution | 2022-11-21   |
+| 05 | prosedur   | 2023-01-12   |
+| 06 | function   | 2023-01-12   |
++----+------------+--------------+
+10 rows in set (0.00 sec)
+
+
+mysql> select * from Cpp where Type = 'for-loop';
++----+----------+--------------+
+| no | Type     | Tanggal_buat |
++----+----------+--------------+
+| 01 | for-loop | 2022-06-10   |
++----+----------+--------------+
+1 row in set (0.00 sec)
+
+mysql> select * from Cpp where Type = 'for-loop' or Type = 'While-loop';
++----+------------+--------------+
+| no | Type       | Tanggal_buat |
++----+------------+--------------+
+| 01 | for-loop   | 2022-06-10   |
+| 03 | While-loop | 2022-06-28   |
++----+------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Cpp where Tanggal_buat = '2023-01-12' and Type = 'function';
++----+----------+--------------+
+| no | Type     | Tanggal_buat |
++----+----------+--------------+
+| 06 | function | 2023-01-12   |
++----+----------+--------------+
+1 row in set (0.04 sec)
+
+mysql> select * from Cpp 
+    -> where Tanggal_buat = '2023-01-12'
+    -> and (Type = 'prosedur' or Type = 'function');
++----+----------+--------------+
+| no | Type     | Tanggal_buat |
++----+----------+--------------+
+| 05 | prosedur | 2023-01-12   |
+| 06 | function | 2023-01-12   |
++----+----------+--------------+
+2 rows in set (0.00 sec)
+
+ql> insert into Cpp (no) values ('18');
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into Cpp (no) values ('19');
+Query OK, 1 row affected (0.16 sec)
+
+10 | else-if    | 2022-10-10   |
+| 11 | NULL       | NULL         |
+| 12 | NULL       | NULL         |
+| 13 | NULL       | NULL         |
+| 14 | NULL       | NULL         |
+| 15 | NULL       | NULL         |
+| 16 | NULL       | NULL         |
+| 17 | NULL       | NULL         |
+| 18 | NULL       | NULL         |
+| 19 | NULL       | NULL         |
+| 20 | NULL       | NULL         |
++----+------------+--------------+
+	
+mysql>
+-- menginput date dengan banyak
+INSERT INTO mata_kuliah (kode_matkul,nama_matkul,nama_jurusan) 
+VALUES ('FIDAS','Fisika Dasar','Fisika'), 
+('CITRA','Pengolahan CITRA','Ilmu Komputer'), 
+('PBASE','Pengantar Database','Ilmu Komputer');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+ 
+mysql> select * from mata_kuliah;
++-------------+--------------------+------------+---------------+
+| kode_matkul | nama_matkul        | jumlah_SKS | nama_jurusan  |
++-------------+--------------------+------------+---------------+
+| CITRA       | Pengolahan CITRA   |          2 | Ilmu Komputer |
+| FIDAS       | Fisika Dasar       |          2 | Fisika        |
+| JRKOM       | Jaringan Komputer  |          2 | Ilmu Komputer |
+| MMDAS       | Matematika Dasar   |          4 | Matematika    |
+| PBASE       | Pengantar Database |          2 | Ilmu Komputer |
++-------------+--------------------+------------+---------------+
+5 rows in set (0.00 sec)
+
+MariaDB [Moneykunc]> update utang
+    -> set tanggal = '2023-02-03'
+    -> where utang.No = 1;
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Moneykunc]> select * from utang;
++----+-----------+---------+-------+--------+------------+
+| No | Nama      | Jenis   | Harga | Jumlah | tanggal    |
++----+-----------+---------+-------+--------+------------+
+|  1 | Nasi Bude | Makanan | 75000 |     10 | 2023-02-03 |
++----+-----------+---------+-------+--------+------------+
+1 row in set (0.000 sec)
+
+MariaDB [latihan1]> alter table Datasiswa
+    -> add Photo varchar(100) not null;
+Query OK, 0 rows affected (0.027 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [latihan1]> desc Datasiswa;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| No       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Nama     | varchar(100) | NO   |     | NULL    |                |
+| Nim      | varchar(6)   | NO   |     | NULL    |                |
+| Fakultas | varchar(50)  | NO   |     | NULL    |                |
+| Photo    | varchar(100) | NO   |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+5 rows in set (0.024 sec)

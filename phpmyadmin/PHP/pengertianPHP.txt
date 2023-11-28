@@ -1,0 +1,26 @@
+
+					PHP
+
+		
+Pengertian phpMyAdmin dan fungsinya memberikan penjabaran yang lengkap kepada anda mengenai fungsi dari fitur yang satu ini. 
+Di era yang modern ini, pengelolaan database menjadi sesuatu yang penting dilakukan.
+Anda perlu mengetahui bahwa database merupakan kumpulan dari data-data yang dikemas secara rapi dan signifikan.
+Di era modern ini penggunaan data juga sangat penting karena ini akan menjadi sebuah informasi yang paling banyak dicari dan harus dikelola dengan baik dan maksimal.
+
+[200~Hal ini erat kaitannya dengan MySQL seperti yang sudah dibahas sebelumnya. Ini akan menjadikan anda lebih mudah dalam menjalankan program tersebut sesuai kebutuhan yang anda inginkan saat ini.
+Hal ini jelas akan terasa manfaatnya yang bisa dapat anda rasakan dengan mudah di dalamnya. Dalam hal ini, penanganan saat membuat website memang sangat penting dilakukan secara professional. Dengan demikian, akan banyak manfaat atau keuntungan lebih banyak yang bisa anda capai dan peroleh di dalamnya. Hal tersebut juga sangat penting dalam rangka memberikan anda manfaat yang luar biasa banyaknya.
+
+[200~Fungsi PHP adalah membuat atau mengembangkan situs web statis atau situs web dinamis atau aplikasi Web. Walaupun sebenarnya bukan hanya PHP bahasa pemrograman yang bisa digunakan untuk memuat website.
+
+PHP digunakan karena untuk membuat website dinamis bisa digunakan untuk menyimpan data ke dalam database, membuat halaman yang dapat berubah-ubah sesuai dengan input  user, memproses form, dll.
+
+	BAHSA PROGRAM:
+	
+	-  Bahasa pemrograman memiliki semua fitur yang diperlukan untuk membangun dan mengembangkan aplikasi yang lengkap   	
+	-  Kode harus dikompilasi terlebih dahulu sebelum dapat dieksekusi.
+	- Tidak perlu disematkan ke bahasa lain.
+
+	BAHASA SCRIPT:
+	- Bahasa scripting Paling banyak digunakan untuk tugas-tugas rutin
+	- Kebanyakan kode ini biasanya dijalankan tanpa adanya kompilasi
+	- Biasanya tertanam ke dalam lingkungan perangkat lunak lain.

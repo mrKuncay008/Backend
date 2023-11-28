@@ -1,0 +1,75 @@
+		
+		------- Ports jaringan ----
+1. Port 21
+
+Port pada jaringan komputer yang pertama adalah port 21. Port yang satu ini digunakan untuk mengkoneksikan FTP Server. FTP merupakan kependekan dari File Transmission Protocol, yang merupakan protocol standar yang digunakan dalam hal berbagai file, yang banyak digunakan pada jaringan konektivitas LAN. Untuk dapat saling menghubungkan komputer satu dengan komputer lainnya dengan menggunakan protocol FTP ini, maka digunakanlah Port Logic yaitu Port 21.
+
+2. Port 22
+
+Port Jaringan komputer berikutnya yang bersifat logic adalah port 22. Port 22 ini merupakan port yang digunakan untuk mengaktifkan SSH atau Secure Shell pada jaringan komputer.
+
+3. Port 23
+
+Port selanjutnya, yaitu Port 23. Port logic 23 ini juga sering dikenal dengan nama port telnet. Hal ini dikarenakan Port 23 ini membantu setiap komputer dapat saling terhubung dengan menggunakan basis protocol telnet. Telnet sendiri merupakan kependekan dari Telecommunication Network, yang memungkinkan sebuah jaringan atau koneksi jaringan dibangun (established) secara remote. Untuk dapat membangun koneksi menggunakan protocol telnet ini, maka digunakanlah port logic 23. (baca juga: fungsi telnet)
+
+4. Port 25
+
+Port selanjutnya adalah port 25. Port ini merupakan port yang cukup penting dalam pengiriman Email. Hal ini disebabkan karena port ini berperan untuk menghubungkan dan membangun sebuah network atau jaringan yang menggunakan protocol SMTP. SMTP merupakan kependekan dari Simple Mail Transfer Protocol, yang merupakan salah satu protocol yang digunakan untuk berkirim email antar jaringan.
+
+5. Port 2525
+
+Port 2525 sebenarnya merupakan sebuah prot logic alterative bagi SMTP atau Simple Mail Transsfer Protocol. Sama seperti penggunaan port 25, port 2525 ini menghubungkan komputer atau client yang akan saling berkirim psan atau email yang menggunakan protocol SMTP dalam proses transmisinya.
+
+6. Port 110
+
+Port logic berikutnya dalam sebuah jaringan komputer adalah port 110. Sama seperti port 25 dan juga prot 2525, port 110 ini memiliki kepentingan dalam bidang surat menyurat secara elektronik atau email. Bedanya, port 110 ini melayani konektivitas jaringan yang menggunakan protocol POP3 atau Post Office Protocol ataupun IMAP4 (Internet Message Access Protokol).
+
+Fungsi dari kedua protocol tersebut adalah untuk menerima email dan juga mengakses mail box pada sebuah email. Jadi apabila anda ingin mendownload dan juga melihat sebuah pesan email menggnakan protocol POP3 ataupun IMAP4, maka pastikan port logic 110 ini sudah terhubung dengan komputer atau gadget anda.
+
+7. Port 119
+
+Port berikutnya dalam sebuah jaringan komputer yang sifatnya logic adalah port 119. Port ini berperang untuk mengakses dan membangun sebuah jaringan yang terhubung dengan NNTP Server, yang merupakan sebuah protocol yang terhubung dengan sebuah server news atau berita di dalam suatu jaringan.
+
+8. Port 389
+
+Port logic berikutnya dalam jaringan komputer adalah port 3389. Port ini merupakan port yan gmelayani koneksi LDAP atau Directory Access Protocol. LDAP merupakan sebuah protocol yang banyak digunakan untuk melakukan akses terhadap direktori atau nama, serta telepon dan juga alamat.
+
+9. Port 3389
+
+Port logic lainnya, yaitu port 3389. Port logic ini merupakan sebuah port logic di dalam jaringan komputer yang dikhususkan untuk melakukan remote desktop. Namun demikian, spesialisasi dri port ini dalam melakukan remote desktop hanya terdapat pada WinX saja.
+
+10. Port 143
+
+Port logic 143 merupakan port yang melayani IMAP4 server. IMAP merupakan kepenedkan dari Internet Messaging Access Protocol, yang banyak digunakan untuk mengambil internet mail. Bedanya dengan port sebelumnya, yaitu port 110 adalah, port ini hanya melayani penagmbilan informasi atau email menggunakan server IMAP4 saja, dan tidak dengan POP3.
+
+11. Port 443
+
+Port berikutnya yang termasuk ke dalam port logic jaringan komputer adalah port 443. Port 443 merupakan port yang digunakan untuk menjalankan sebuah server yang aman atau SSL (Secure Server Layer). Apabila anda ngin membangun sebuah koneksi dengan menggunakan sebuah server secara aman, maka nantinya jaringan anda akan menggunakna port logic yang satu ini.
+
+12. Port 445
+
+Merupakan port logic pada jarinan komputer yang banyak digunakan sebagai file sharing. Port ini banyak digunakan ketika sebuah jaringan komputer ingin melakukan sharing printer, sharing resources, dan sebagainya dalam waktu bersamaan. Kelemahan dari sharing resources, file dan juga hardware menggunakan port ini adalah port ini merupakan salah satu port yang rentan terhadap worm dan juga virus.
+
+13. Port 1503 dan Port 1720
+
+Port logic berikutnya di dalam sebuah jaringan komputer adalah port 1503 dan juga port 1720. Port ini berfungsi untuk melakukan hubungan dengan Microsoft NetMeeting dan VOIP. Dengan begitu, maka anda dapat melakukan panggilan telepon dengan menggunakan internet.
+
+14. Port 5631
+
+Merupakan port logic pada sebuah jaringan komputer yang bertugas untuk menghubungan dengan PC Anywhere.
+
+15. Port 5900
+
+Port logic yan gberikutnya adalah port 5631. Port 5631 ini merpakan port pada jaringan komputer yang berfungsi untuk menghubungkan VNC atau Virtual Network Computing. Fitur VNC ini sanga berguna ketika anda ingin melakukan pengontrolan terhadap server secara remote atau jarak jauh.
+
+16. Port 3306
+
+Port 3306 merupakan port yang digunakan para programmer untuk melakukan proses manajamen basis data atau database, karena port 3306 in imerupakan port yang terhubung dengan aplikasi MySQL.
+
+17. Port 80
+
+Port 80 merupakan jenis port di dalam sebuah jaringan yang banyak digunakan sebagai port dalam mengkoneksikan web server. Web server sendiri merupakan sebuah server yang dibangun untuk memenuhi kebutuhan sebuah website atau situs tertentu. Untuk dapat menghubungkan koneksi antara client dengan web server, maka port 80 ini dibutuhkan.
+
+18. Port 81
+
+Port 81 merupakan alternative dari penggunana port 80. Jadi secara fungsional dan juga kegunaan, prot 81 ini merupakan port yang digunakan untuk menghubungkan web server atau membangun sebuah jaringan yang langsung berhubungan dengan web server.

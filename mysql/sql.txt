@@ -1,0 +1,67 @@
+
+                   ----- SQL -----
+        (dbms)
+ - DBMS adalh aplikasi untuk memanege data
+ - DBMS biasanya berjalan sebagai server yg digunakan untuk manage data
+        tinggal di bei perintah saja untuk melakukan proses managemen data
+        ( CREAT, ATTR, DELETE, GET, PUT)
+ - aplikasi seperti mysql, postgresql,oracel
+
+         (SINTAX)
+
+  - SELECT : Untuk memilih data yg akan di pilih.
+  - tanda ; : adalah sintax penting di akhir perintah.
+  - form : adalah untuk sambungan table dari select yg mana kita akan pilih
+  - SHOW : untuk menampilkan table
+  - USE : digunakan untuk memilih database yang ingin digunakan.
+  - CREATE : untuk membuat data baru
+  - DESC : untuk melihat struktur/metadata sbuah table
+
+	( Running di linux)
+  - cd /var/log
+  - /log > mkdir mysql
+  - cd mysql
+  - chown mysql:mysql -R /var/log/mysql/
+  - mysql -u root -p
+  - Enter Paswword: masukan password
+
+ Bahasa Manipulasi Data (DML) mencakup semua perintah berikut kecuali COMMIT. 
+ DML adalah bagian dari SQL yang digunakan untuk memanipulasi data dalam database. 
+ Perintah DML mencakup pernyataan seperti INSERT, UPDATE, dan DELETE, yang masing-masing digunakan untuk menambah, memodifikasi, dan menghapus 
+data dari database. Perintah ini memungkinkan Anda menambahkan baris baru ke tabel, mengubah data yang ada, atau menghapus baris dari tabel sesuai kebutuhan. 
+Namun, DML tidak menyertakan perintah COMMIT, yang merupakan bagian dari Transaction Control Language (TCL). Perintah COMMIT digunakan untuk menyimpan perubahan yang
+dibuat oleh pernyataan DML ke database, sehingga menjadi permanen.
+
+Saat mengubah tabel,
+Anda dapat memperkecil lebar kolom jika:
+Kolom hanya berisi nilai null Penurunan lebar kolom tidak kurang dari nilai yang ada pada kolom tersebut Tabel tidak memiliki baris Kondisi ini harus dipenuhi karena penurunan lebar kolom berpotensi menyebabkan hilangnya data jika nilai yang ada di kolom lebih panjang dari yang baru.
+Jika kolom hanya berisi nilai null, tidak ada data yang hilang, sehingga aman untuk mengurangi lebar kolom.
+ Demikian pula, jika tabel tidak memiliki baris, tidak ada data untuk dipertimbangkan, sehingga lebar kolom dapat diubah tanpa menimbulkan masalah.
+ Selain itu, jika penurunan lebar kolom tidak kurang dari nilai yang ada di kolom,
+nilainya akan tetap sesuai dengan lebar kolom baru, sehingga tidak ada data yang hilang.
+
+Dalam kueri dasar, bidang yang akan ditampilkan muncul sebelum kata DARI. Permintaan SQL dasar terdiri dari beberapa klausa, 
+termasuk klausa SELECT, FROM, WHERE, dan ORDER BY. Klausa SELECT menentukan bidang yang harus disertakan dalam hasil kueri. Klausa FROM menentukan tabel atau beberapa tabel dari mana data harus diambil.
+Klausa WHERE digunakan untuk menentukan kriteria untuk memfilter data, dan klausa ORDER BY digunakan untuk mengurutkan hasil.
+Contoh: 
+SELECT field1, field2, ...
+FROM table
+WHERE conditions
+ORDER BY field1, field2, ...
+Dalam contoh ini, bidang yang akan ditampilkan (bidang1, bidang2, dll.) berada setelah kata kunci SELECT dan sebelum kata kunci FROM.
+Ini adalah kebalikan dari apa yang dikatakan pernyataan itu.
+
+Untuk melihat rekaman yang dipilih dari tabel, Anda perlu menambahkan klausa WHERE ke kueri.
+Klausa WHERE digunakan untuk menentukan kriteria untuk memfilter data yang diambil dari tabel.
+Ini memungkinkan Anda menentukan baris mana yang harus disertakan dalam hasil kueri, berdasarkan nilai dalam kolom.
+SELECT *
+FROM employees
+WHERE department = 'IT';
+
+Dalam opsi Perintah SQL APEX, Anda dapat menjalankan lebih dari satu perintah SQL sekaligus. APEX adalah alat berbasis web untuk mengembangkan dan menggunakan aplikasi berbasis database.
+Ini termasuk fitur SQL Workspace yang memungkinkan Anda untuk menjalankan perintah SQL secara langsung terhadap database.
+Opsi SQL Commands dari SQL Workspace memungkinkan Anda untuk memasukkan dan menjalankan satu atau lebih perintah SQL sekaligus.
+Ini berguna untuk menjalankan beberapa perintah yang terkait satu sama lain, atau untuk menjalankan serangkaian perintah dalam urutan tertentu.
+ Untuk menjalankan beberapa perintah SQL sekaligus,
+Anda cukup memasukkan setiap perintah pada baris terpisah di editor Perintah SQL.
+APEX akan menjalankan setiap perintah secara bergantian, dan menampilkan hasil untuk setiap perintah.

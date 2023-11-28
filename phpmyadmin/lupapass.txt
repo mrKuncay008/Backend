@@ -1,0 +1,39 @@
+
+
+###### Solve phpmyadmin lupa password #########
+
+ 1. root@home~# mysql -u root
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.31-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+
+mysql> FLUSH PRIVILEGES;
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> ALTER USER 'root'@'localhost'IDENTIFIED by '';
+
+Query OK, 0 rows affected (0.04 sec)
+
+ 2. systemctl restart mysql
+
+ 3. root@home:# mysql -u root
+
+	mysql> UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE user = 'root';
+	
+	Query OK, 1 row affected (0.21 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
+
+	mysql> FLUSH PRIVILEGES;
+	
+Query OK, 0 rows affected (0.34 sec)
+
+mysql> exit
+Bye
+
+/etc/phpmyadmin vim php.config.inc XqGFwXZMNlO3WsCQ
+

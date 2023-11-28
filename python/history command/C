@@ -1,0 +1,198 @@
+		
+		
+						
+		
+							Bahasa Pemograman C
+		------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		
+		
+ 		-- input output
+		
+ 		Pada fungsi printf() kita menggunakan simbol %s, %d, dan \n untuk format teks. Simbol-simbol ini disebut format specifier.
+		
+		Mari kita bahas arti dari simbol tersebut:
+		
+    	%s adalah simbol untuk menampilkan nilai string;
+    	%d adalah simbol untuk menampilkan nilai angka atau bilangan desimal;
+    	\n adalah simbol untuk membuat baris baru.
+		
+		%c	untuk menampilkan karakter
+		%s	untuk menampilkan teks (string)
+		%d, %i	untuk menampilkan bilangan desimal
+		%f	untuk menampilkan bilangan pecahan
+		%o	untuk menampilkan bilangan oktal
+		%x	untuk menampilkan bilangan heksadesimal
+		\t	membuat tabs
+			
+ 		Fungsi puts() adalah fungsi untuk menampilkan output. Fungsi ini juga terdapat pada library stdio.h.
+		
+		Perbedaanya dengan printf(), fungsi puts() tidak memerlukan format.
+		
+		Fungsi puts() akan selalu membuat baris baru. Jadi tidak perlu menggunakan simbol \n seperti pada printf().
+ 		
+ 		
+ 		Fungsi scanf() adalah fungsi untuk mengambil input dari keyboard. Fungsi ini memiliki format seperti fungsi printf().
+ 		Format yang diberikan tergantung dari jenis tipe data apa yang ingin kita ambil.
+
+		Misalnya mau mengambil angka, maka kita bisa pakai %d atau %i.
+ 		
+ 		Untuk mengatasi masalah spasi, kita bisa ubah format yang digunakan pada scanf() menjadi seperti ini:
+
+		printf("Nama: ");
+		scanf("%[^\n]s", name);
+		
+		
+ 		Dalam menggunakan scanf(), kita dianjurkan menggunakan simbol & sebelum nama variabel.
+
+		Contoh:
+		
+		#include <stdio.h>
+		
+		void main(){
+		
+    		int a, b, c;
+		
+    		printf("Inputkan nilai a: ");
+    		scanf("%i", &a);
+		
+    		printf("Inputkan nilai b: ");
+    		scanf("%i", &b);
+		
+    		c = a + b;
+		
+    		printf("Hasil a + b: %i", c);
+		
+			}
+			
+			Simbol & berfungsi untuk mengambil alamat memori dari sebuah variabel.
+			
+			Fungsi scanf() membutuhkan tempat untuk menyimpan nilai yang akan diinputkan.
+			
+			Karena itu kita memberikan simbol & di depan nama variabel untuk menentukan alamat memori yang akan digunakan oleh scanf().
+					
+				
+		
+		
+		 		
+ 		
+ 		-- percbangan
+		
+ 			Percabangan if
+		
+		Percabangan if merupakan percabangan yang hanya memiliki satu blok pilihan saat kondisi bernilai benar.
+		
+		“Jika total belanja lebih besar dari Rp 100.000, Maka tampilkan pesan Selamat, Anda dapat hadiah”
+		
+		Kalau dibawah Rp 100.000 bagaimana?
+		
+		Ya pesannya tidak akan ditampilkan.
+		
+		Mari kita coba dalam program C.
+		
+		#include <stdio.h>
+		
+		void main(){
+    		printf("== Program Pembayaran ==\n");
+    		int total_belanja = 0;
+		
+    		printf("Inputkan total belanja: ");
+    		scanf("%i", &total_belanja);
+		
+    		// menggunakan blok percabangan if
+    		if( total_belanja > 100000 ){
+        		printf("Selamat, Anda mendapatkan hadiah!\n");
+    		}
+		
+    		printf("Terimakasih sudah berbelanja di toko kami\n\n");
+		}
+		
+		
+ 		-- Header pada bahasa C
+ 		
+		(File stdio.h adalah header file yang berisi definisi dari fungsi-fungsi untuk standar input dan output seperti printf(), scanf(), gets(), puts(), dan sebagainya.
+		
+		File stdio.h ada di mana?
+		
+		Jika kamu pakai Linux, file stdio.h akan berada di direktori /usr/include/.
+		
+		Mengapa kita Butuh Header File?
+		
+		Header file pada C sebenarnya berperan sebagai library.
+		
+		Apa itu library?
+		
+		Library dalam pemrograman adalah sekumpulan fungsi-fungsi dan konstanta yang bisa kita pakai kembali.
+		
+		Misalnya:
+		
+		Kita sedang membuat program sekala besar. Program ini punya kode yang sangat banyak sampai ribuan. Maka kita tidak mungkin akan menulis program tersebut dalam satu file saja.
+		
+		Biar gampang dikelola, program harus dibuat menjadi modul atau library dengan menulisnya di file yang terpisah.
+		
+		
+		
+		
+		
+		
+ 		-- Oprasi FILE
+			( Penggunaan operasi FILE dalam sebuah program sangat dibutuhkan dalam pembuatan program yang sesungguhnya. Kita membutuhkan file sebagai tempat penampung data-data selama operasi program. Jika kamu menggunakan variabel biasa, data yang biasanya diolah program hanya akan tersimpan sementara dalam memory dan akan hilang ketika program close. Berbeda dengan memory, penyimpanan data berbasis file akan tersimpan terus walaupun program telah diclose maupun komputer telah di shutdown.
+		
+		Pada dasarnya, operasi file terbagi 3 jenis. Read (R), Write(W), dan Append(A). Read artinya membaca isi file, write menulis data ke file dan append menambahkan data ke baris terakhir dalam file.
+			int main(){
+			FILE *in=fopen(namafile,mode); 
+			fclose(in);
+			getchar();
+        		return 0;
+			} 
+		
+    		FILE *in=fopen(namafile, mode); Langkah pertama kita wajib membuka file terlebih dahulu dengan perintah fopen. Fungsi fopen diikuti dengan 2 variabel diantaranya namafile dan mode. Nama file bebas kamu tentukan sendiri.
+    		Setelah dibuka, file tersebut wajib kita close dengan perintah fclose(namavariabel). Karena diawal kita membuka file lalu menyimpannya dalam variabel pointer “in”, maka diakhir program juga wajib menutup file dengan fopen(in);
+		
+		r 	Membuka file sesuai namafilenya untuk dibaca, jika file tidak ada maka akan bernilai NULL.
+		w 	Membuka file untuk ditulis, jika sebelumnya sudah ada nama file yang sama, maka akan dilakukan overwrite/menimpa file dengan yang baru.
+		a 	Membuka file sesuai namafilenya untuk ditambahkan datanya dipaling bawah baris terakhir. Jika file tidak ada, maka akan membuat file baru secara otomatis.
+		r+ 	Sama dengan “r” tetapi selain file dapat dibaca juga dapat di tulis
+		w+ 	Sama dengan “w” tetapi selain file dapat ditulis juga dapat dibaca
+		a+ 	Sama dengan ”a” tetapi selain file dapat ditulis file juga dapat dibaca
+		'b' untuk binarry
+		
+		Fungsi fopen() akan menghasilkan sebuah pointer yang menunjuk ke alamat memori dari file yang akan dibuka, karena itulah kita membutuhkan pointer untuk mengaksesnya.
+ 		
+		// membuat pointer
+		File *fptr;
+		
+		// membuka file
+		fptr = fopen("namafile.txt", "r");
+		
+		Fungsi fgets() akan membaca isi file yang ditunjuk oleh pointer fptr, kemudian hasilnya akan disimpan ke dalam variabel buff.
+		
+		Fungsi fgets() hanya akan membaca satu baris saja. Anka 255 adalah panjang baris (karakter) yang akan dibaca.
+		
+		
+		#include <stdlib.h>
+		#include <stdio.h>
+		
+		void main()
+		{
+  		char buff[255];
+  		FILE *fptr;
+		
+  		// membuka file
+  		if ((fptr = fopen("puisi.txt","r")) == NULL){
+      		printf("Error: File tidak ada!");
+      		// Tutup program karena file gak ada.
+      		exit(1);
+  		}
+		
+  		// baca isi file dengan gets lalu simpan ke buff
+   		while(fgets(buff, 255, fptr))
+   		tampil isi file metode pengulangan
+  		{printf("%s", buff);}
+		
+  		// tutup file
+  		fclose(fptr);
+		}
+		
+		
+		

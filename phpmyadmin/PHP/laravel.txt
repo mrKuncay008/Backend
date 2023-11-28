@@ -1,0 +1,58 @@
+		
+
+		laravel
+
+
+Laravel adalah kerangka kerja aplikasi web PHP yang dirancang untuk memudahkan pengembang membangun aplikasi web yang modern dan kuat. 
+Beberapa fitur utama dan manfaat menggunakan Laravel meliputi:
+
+ORM fasih (pemetaan relasional objek) untuk bekerja dengan database: Eloquent ORM Laravel menyediakan cara sederhana dan intuitif untuk berinteraksi dengan database,
+memungkinkan Anda untuk bekerja dengan database menggunakan sintaks berorientasi objek.
+
+Mesin templating Blade: Mesin templating Blade Laravel menyediakan cara sederhana dan ampuh untuk membuat dan mengatur tampilan untuk aplikasi Anda, 
+sehingga mudah untuk menggunakan kembali elemen umum di beberapa halaman.
+
+Antarmuka baris perintah Artisan: Antarmuka baris perintah Artisan Laravel menyediakan sejumlah perintah yang berguna untuk mengelola dan menyebarkan aplikasi Anda, 
+sehingga mudah untuk mengotomatiskan tugas-tugas umum.
+
+Dukungan bawaan untuk autentikasi dan otorisasi: Laravel menyertakan dukungan bawaan untuk autentikasi dan otorisasi, yang memudahkan untuk mengamankan aplikasi Anda
+dan melindunginya dari akses yang tidak sah.
+
+Pendekatan yang disertakan dengan baterai: Laravel hadir dengan banyak fitur bawaan yang biasanya harus Anda buat sendiri, termasuk dukungan untuk mengirim email,
+ menangani pembayaran, menangani unggahan file, dan banyak lagi.
+
+Singkatnya, Laravel menyediakan sintaks dan alat yang bersih dan elegan yang memungkinkan pengembang membangun aplikasi web berkinerja tinggi dengan cepat. 
+Ini adalah pilihan populer di kalangan pengembang PHP, 
+Anda dapat memilihnya untuk membangun situs web yang membutuhkan manajemen pengguna dan berbagai sistem manajemen konten.
+
+contoh coding laravel php
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class HelloWorldController extends Controller
+{
+    public function index()
+    {
+        return "Hello, World!";
+    }
+}
+
+Ini adalah kelas pengontrol, yang bertanggung jawab untuk menangani permintaan HTTP yang masuk dan mengembalikan respons yang sesuai.
+Metode dalam contoh ini disebut ketika pengguna mengunjungi rute, dan itu hanya mengembalikan string "Halo, Dunia!".index/helloworld
+
+Anda dapat merutekan ke metode pengontrol ini di web.php atau api.php di bawah folder rute
+
+Route::get('helloworld', 'HelloWorldController@index');
+
+Saat Anda mengunjungi rute pada aplikasi Anda, Anda akan melihat teks "Halo, Dunia!" ditampilkan di browser./helloworld
+
+Contoh ini sangat mendasar, tetapi memberi Anda gambaran betapa mudahnya bekerja dengan pengontrol dan rute di Laravel, 
+dan bagaimana Anda dapat menggunakannya untuk menangani berbagai jenis permintaan dan mengembalikan berbagai jenis respons.
+
+Perhatikan bahwa contoh ini mungkin tidak berfungsi apa adanya, perlu menyertakan bootstrap laravel, dan mengatur lingkungan untuk dijalankan, 
+tetapi ini memberi Anda gambaran umum tentang bagaimana arsitektur Laravel dan bagaimana digunakan untuk menangani permintaan http
+
