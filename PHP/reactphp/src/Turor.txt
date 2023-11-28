@@ -1,0 +1,36 @@
+step 1:
+ Buat file php di localhost(fungsi dll)
+ di terminal root "php -S localhost:8000" untuk menjalankan server localhost
+
+step 2:
+ Buat Project react npx
+ Dalam system input dll menggunakan metode Jquery Ajax untuk di kirim ke server
+ di element <form>
+    action="http://localhost:8000/cobareact/server.php"
+    method="post"
+
+Formulir sederhana yang mengambil input dari pengguna, 
+mengirimkannya ke server menggunakan AJAX (menggunakan jQuery), dan kemudian menampilkan hasil dari server.
+
+    useState: React hook yang digunakan untuk mendeklarasikan state dalam komponen functional. 
+    Di sini,   menggunakan useState untuk membuat dua state, yaitu name dan result.
+
+    handleChange: Sebuah fungsi yang dipanggil setiap kali ada perubahan pada input "name". 
+    Fungsi ini mengubah nilai state name sesuai dengan nilai yang dimasukkan oleh pengguna.
+
+    handleSubmit: Fungsi ini dipanggil saat formulir disubmit. Ketika formulir disubmit,
+     fungsi ini menggunakan jQuery untuk membuat AJAX POST request ke server di URL yang ditentukan dalam atribut action formulir.
+      Data formulir diambil dengan menggunakan form.serialize(). Hasil dari server kemudian diset sebagai nilai state result.
+
+    Formulir: Formulir tersebut memiliki atribut action yang menunjukkan URL endpoint server tempat formulir akan dikirim.
+     Formulir mengandung input "name" yang nilainya diatur oleh state name, dan ketika formulir disubmit, fungsi handleSubmit dipanggil.
+
+    Tag <h1>: Ini digunakan untuk menampilkan hasil dari server.
+     Nilai dari state result akan ditampilkan di sini.
+
+    event.preventDefault(): Dipanggil dalam handleSubmit untuk mencegah perilaku default formulir
+     (misalnya, mengarahkan ke halaman baru).
+
+Perlu dicatat bahwa penggunaan jQuery untuk AJAX request dalam aplikasi React mungkin bukan pendekatan yang disarankan.
+Biasanya, dalam proyek React,   dapat menggunakan library seperti axios atau menggunakan fetch API bawaan dari JavaScript. 
+Hal ini karena menggunakan jQuery bersama React dapat memperkenalkan kompleksitas dan beban yang tidak perlu pada proyek.
