@@ -1,0 +1,46 @@
+/* Login */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+input[type=text], input[type=password] {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    width: 300px;
+    border: 1px solid gray;
+    padding: 0.5rem;
+}
+
+.button {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem;
+    background: rgb(128, 15, 0);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+label {
+    font-size: small;
+    margin-top: 0.5rem;
+}
+p{color: blue;}
+
+.eror{color: red;}
+.success{color: greenyellow;}
+
+/* Dasbord */
+
+.body {
+    background-color: aqua;
+    text-align: center;
+    color: black;
+}

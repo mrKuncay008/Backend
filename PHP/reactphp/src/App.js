@@ -1,8 +1,8 @@
 import { useState } from "react";
 import $ from "jquery";
 import './index.css'
-import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Table from 'react-bootstrap/Table';
 
 function App() {
   const [name, setName] = useState("");
@@ -61,7 +61,7 @@ function App() {
               ))}
             </ul>
 
-      <Table striped bordered hover variant="dark">
+  {/* <Table striped bordered hover variant="dark">
       <thead>
         <tr>
           <th>#</th>
@@ -89,7 +89,8 @@ function App() {
           <td>@twitter</td>
         </tr>
       </tbody>
-    </Table>
+    </Table> */}
+    
     </div>
     
   );
