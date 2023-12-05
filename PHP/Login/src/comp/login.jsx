@@ -51,16 +51,20 @@ const Log = () => {
                 body: JSON.stringify(Data)
             }).then((response) => response.json())
             .then((response) => {
-                if (response[0].result === 'Username atau Password SaLah!!') {
-                    setError(response[0].result);
+                if (response[0] && response[0].result) {
+                    if (response[0].result === 'Username atau Password Salah!!') {
+                        setError(response[0].result);
+                    } else {
+                        setMsg(response[0].result);
+                    }
+                } else {
+                    setError('Format respons tidak sesuai yang diharapkan.');
                 }
-                else {
-                    setMsg(response[0].result);
-                }
-            }).catch((err) => {
-                setError(err);
-                console.log(err);
             })
+            .catch((err) => {
+                setError('Warning: '+ err.message);
+                
+            });
         }
         else {
             setError("Silakan Di Isi Dahulu !")
@@ -68,7 +72,7 @@ const Log = () => {
     }
 
     return (
-        <div className='form'>
+        <div>
             <p>
                 {
                     Error !== "" ?
@@ -76,6 +80,7 @@ const Log = () => {
                     <span className='success'>{Msg}</span>
                 }
             </p>
+        <div className='form'>
             <label>Username</label>
             <input 
             type="text"
@@ -98,6 +103,7 @@ const Log = () => {
             onClick={logSub}>
                 Submit
             </button>
+        </div>
         </div>
     );
 }

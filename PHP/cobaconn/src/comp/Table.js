@@ -10,12 +10,12 @@ const Tabel = () => {
     const fetchData = async () => {
       try {
         // Lakukan permintaan ke server PHP
-        const response = await axios.post('http://localhost:8000/cobareact/coba.php');
+        const response = await axios.post('http://localhost/cobareact/coba.php');
 
         // Setel data yang diterima ke dalam state
         setData(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error Mengammbil data:", error);
       }
     };
 
