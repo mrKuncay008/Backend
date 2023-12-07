@@ -10,7 +10,7 @@ const Tabel = () => {
     const fetchData = async () => {
       try {
         // Lakukan permintaan ke server PHP
-        const response = await axios.post('http://localhost/cobareact/coba.php');
+        const response = await axios.post('http://localhost/Table/server.php');
 
         // Setel data yang diterima ke dalam state
         setData(response.data);
