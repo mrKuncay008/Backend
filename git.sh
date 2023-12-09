@@ -21,3 +21,7 @@ echo -e "Step 3: ${GREEN}Git Commit ${NOCOLOR}"
 git commit -m "$commit"
 
 echo
+echo -e "Step Final: ${GREEN}Git push ${NOCOLOR}"
+git push
+
+echo
