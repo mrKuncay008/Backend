@@ -5,27 +5,38 @@ import axios from "axios";
 
 const Tabel = () => {
   const [data, setData] = useState([]);
+  const [loading,setLoading] = useState(true);
+  const [error,setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Lakukan permintaan ke server PHP
-        const response = await axios.post('http://localhost/Table/server.php');
-
+        const response = await axios.get('http://localhost/Table/server.php');
         // Setel data yang diterima ke dalam state
         setData(response.data);
       } catch (error) {
-        console.error("Error Mengammbil data:", error);
+        setError(error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
   return (
     <div>
       <h1>Table Data</h1>
-      <Table striped bordered hover variant="dark">
+      <Table className="table-dark">
       <thead>
         <tr>
           <th>ID</th>
@@ -36,27 +47,21 @@ const Tabel = () => {
         </tr>
       </thead>
       <tbody className="table-light">
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Male</td>
+      {Array.isArray(data) && data.length > 0 ? (
+        data.map((item) => (
+        <tr key={item.id}>
+          <td className="fw-bold">{item.id}</td>
+          <td className="table-warning">{item.username}</td>
+          <td className="">{item.first_name}</td>
+          <td className="">{item.last_name}</td>
+          <td className="">{item.gander}</td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Male</td>
+        ))
+        ) : (
+          <tr>
+          <td colSpan="5">No data available</td>
         </tr>
-        <tr>
-          <td>3</td>
-          <td>Kuncay</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Famele</td>
-        </tr>
+      )}
       </tbody>
     </Table>
     </div>

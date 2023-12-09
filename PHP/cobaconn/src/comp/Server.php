@@ -1,5 +1,6 @@
 <?php
     // Konfigurasi koneksi ke database /htdocs
+    header("Access-Control-Allow-Origin: *");
     $host = "localhost";
     $username = "root";
     $password = "password";
@@ -31,7 +32,8 @@
         echo json_encode($result);
     } else {
         // Metode HTTP tidak didukung
-        echo ("Hallo Dari Backend");
+        echo ("Hallo Dari Backend, Silakan Ganti Methode");
+        header('HTTP/1.1 405 Method Not Allowed');
         header('Allow: POST');
     }
     
