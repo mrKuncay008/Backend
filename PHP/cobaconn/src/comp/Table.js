@@ -9,6 +9,7 @@ const Tabel = () => {
   const [error,setError] = useState(null);
 
   useEffect(() => {
+    // API UNTUK KE DATABASE LOCAL
     const fetchData = async () => {
       try {
         // Lakukan permintaan ke server PHP
