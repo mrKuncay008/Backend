@@ -12,7 +12,7 @@ const Tabel = () => {
     const fetchData = async () => {
       try {
         // Lakukan permintaan ke server PHP
-        const response = await axios.get('http://localhost/Table/server.php');
+        const response = await axios.get('http://localhost/cobareact/coba.php');
         // Setel data yang diterima ke dalam state
         setData(response.data);
       } catch (error) {
@@ -50,11 +50,11 @@ const Tabel = () => {
       {Array.isArray(data) && data.length > 0 ? (
         data.map((item) => (
         <tr key={item.id}>
-          <td className="fw-bold">{item.id}</td>
+          <td className="fw-bold">{item.user_id}</td>
           <td className="table-warning">{item.username}</td>
           <td className="">{item.first_name}</td>
           <td className="">{item.last_name}</td>
-          <td className="">{item.gander}</td>
+          <td className="">{item.gender}</td>
         </tr>
         ))
         ) : (
