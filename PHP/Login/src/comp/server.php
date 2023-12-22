@@ -1,8 +1,8 @@
-<?php 
+<?php
     header("Access-Control-Allow-Origin: http://localhost:5173");
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Methods: POST");
-    $conn = new mysqli("localhost", "root", "password", "login");
+    $conn = new mysqli("localhost", "root", "0343Ahub6453@", "basisdata_tugas10");
 
     if (mysqli_connect_error()) {
         echo mysqli_connect_error();
@@ -16,7 +16,7 @@
         $result = "";
 
         if ($user != "" and $pass != "") {
-            $sql = "SELECT * FROM user_details WHERE username='$user' AND password='$pass';";
+            $sql = "SELECT * FROM STUDENT WHERE first_name='$user' AND Address='$pass';";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ss", $user, $pass);
             $stmt->execute();
@@ -33,11 +33,11 @@
                 $result = "Username Salah !!";
             }
             error_log("Ada Yang salah");
-        } 
+        }
         $conn->close();
         $response = array("result" => $result);
         echo json_encode($response);
         error_log("Failed to connect to database!", 0);
     }
-    
+
 ?>

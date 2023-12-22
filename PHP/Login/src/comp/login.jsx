@@ -7,7 +7,7 @@ const Log = () => {
     const [Pass , setPass] = useState("");
     const [Error , setError] = useState("");
     const [Msg , setMsg] = useState("");
-    
+
     useEffect (() => {
         setTimeout(function () {
             setMsg("")
@@ -23,7 +23,7 @@ const Log = () => {
                     setError("Username Tidak Boleh Kosong");
                 }
                 break;
-            
+
                 case "Pass":
                     setError("");
                     setPass(e.target.value);
@@ -36,11 +36,11 @@ const Log = () => {
     }
     const logSub = () => {
         if (User !== "" && Pass !== "") {
-            var url = "http://localhost:8000/Login/Server.php";
+            var url = "http://localhost/Login/Server.php";
             var headers = {
                 "Accept" : "application/json",
                 "Content-type" : "application/json"
-            };     
+            };
             var Data = {
                 User: User,
                 Pass: Pass
@@ -63,7 +63,7 @@ const Log = () => {
             })
             .catch((err) => {
                 setError('Warning: '+ err.message);
-                
+
             });
         }
         else {
@@ -82,7 +82,7 @@ const Log = () => {
             </p>
         <div className='form'>
             <label>Username</label>
-            <input 
+            <input
             type="text"
             value={User}
             onChange={(e) => handleInputChange(e, "User")}
@@ -90,7 +90,7 @@ const Log = () => {
             />
 
             <label>Password</label>
-            <input 
+            <input
             type="password"
             value={Pass}
             onChange={(e) => handleInputChange(e, "Pass")}
