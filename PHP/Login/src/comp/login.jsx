@@ -36,7 +36,7 @@ const Log = () => {
     }
     const logSub = () => {
         if (User !== "" && Pass !== "") {
-            var url = "http://localhost/Login/Server.php";
+            var url = "http://localhost/Login/server.php";
             var headers = {
                 "Accept" : "application/json",
                 "Content-type" : "application/json"

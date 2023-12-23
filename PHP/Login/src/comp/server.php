@@ -6,6 +6,7 @@
 
     if (mysqli_connect_error()) {
         echo mysqli_connect_error();
+        echo "Connect success";
         exit();
     } else {
         $eData = file_get_contents("php://input");
