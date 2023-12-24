@@ -1,6 +1,6 @@
 #!/bin/bash
 echo
-echo "Hallo Komputer kantor"
+echo "Hallo Mas-Kuncay"
 
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
