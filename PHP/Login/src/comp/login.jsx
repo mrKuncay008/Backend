@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './style.css';
 
 const Log = () => {
-
+    const naviget = useNavigate();
     const [User , setUser] = useState("");
     const [Pass , setPass] = useState("");
     const [Error , setError] = useState("");
@@ -51,17 +52,15 @@ const Log = () => {
                 body: JSON.stringify(Data)
             }).then((response) => response.json())
             .then((response) => {
-                if (response[0] && response[0].result) {
-                    if (response[0].result === 'Username atau Password Salah!!') {
-                        setError(response[0].result);
+                    if (response[0].result === "Username Salah!!" || response[0].result === "Password Salah!!") {
+                        setError(response[0].result)
                     } else {
                         setMsg(response[0].result);
+                        setTimeout(function() {
+                          naviget("/dasbord");
+                        }, 5000);
                     }
-                } else {
-                    setError('Format respons tidak sesuai yang diharapkan.');
-                }
-            })
-            .catch((err) => {
+            }).catch((err) => {
                 setError('Warning: '+ err.message);
 
             });
