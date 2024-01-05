@@ -13,7 +13,7 @@ const Tabel = () => {
     const fetchData = async () => {
       try {
         // Lakukan permintaan ke server PHP
-        const response = await axios.get('http://localhost/cobareact/coba.php');
+        const response = await axios.get('http://localhost/Conn/server.php');
         // Setel data yang diterima ke dalam state
         setData(response.data);
       } catch (error) {
@@ -29,7 +29,7 @@ const Tabel = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  
+
   if (error) {
     return <p>Error: {error.message}</p>;
   }
@@ -42,20 +42,20 @@ const Tabel = () => {
         <tr>
           <th>ID</th>
           <th>Username</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Gender</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Phone Number</th>
         </tr>
       </thead>
       <tbody className="table-light">
       {Array.isArray(data) && data.length > 0 ? (
         data.map((item) => (
         <tr key={item.id}>
-          <td className="fw-bold">{item.user_id}</td>
-          <td className="table-warning">{item.username}</td>
-          <td className="">{item.first_name}</td>
-          <td className="">{item.last_name}</td>
-          <td className="">{item.gender}</td>
+          <td className="fw-bold">{item.CUST_CODE}</td>
+          <td className="table-warning">{item.CUST_NAME}</td>
+          <td className="">{item.CUST_CITY}</td>
+          <td className="">{item.CUST_COUNTRY}</td>
+          <td className="">{item.PHONE_NO}</td>
         </tr>
         ))
         ) : (
