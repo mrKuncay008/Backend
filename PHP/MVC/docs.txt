@@ -1,0 +1,38 @@
+=== Persiapan Membuat projek PHP native ===
+
+/folder-utama
+
+    /app
+        init.php
+        /control
+        /models
+        /views
+        /core
+            App.php
+            Control.php
+    /public
+        index.php
+        /css
+        /img
+        /js
+
+
+ ## Memblokir direktory untuk pembuatan web di localhost dengan httaccess
+
+ nano /etc/apache2/apache2.conf
+
+ ## Cari baris kode :
+
+<Directory "/var/www/htdocs">
+        AllowOverride None (Ubah Menjadi All)
+<Directory>
+
+ ## Untuk Memblokir Options -MultiViews
+
+-  sudo a2query -m rewrite
+
+- <Directory "/path/to/your/project/public">
+    AllowOverride All
+    Require all granted
+  </Directory>
+

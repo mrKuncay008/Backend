@@ -1,0 +1,9 @@
+Options -MultiViews
+RewriteEngine On
+
+# Tambahkan aturan untuk memeriksa apakah file atau direktori ada sebelum mengarahkan ke index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Aturan untuk mengarahkan permintaan ke index.php dengan menggunakan query string url=$1
+RewriteRule ^(.*)$ index.php?url=$1 [L]
