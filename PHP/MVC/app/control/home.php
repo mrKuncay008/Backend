@@ -1,7 +1,7 @@
 <?php
 
-class home {
+class home extends control {
     public function index() {
-        echo 'home/index';
+        $this->view('/home/index');
     }
 }
