@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>
-        About me anjay:
+        About me:
     </h1>
     <p>
         Hallo saya <?= $data['nama']; ?>, Kerjaan saya sehari hari adalah
