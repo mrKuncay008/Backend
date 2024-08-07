@@ -1,6 +1,6 @@
 <div class="input">
         <h1>REGISTER</h1>
-        <form action="<?= BASEURL;?>/register" method="POST">
+        <form action="<?= BASEURL;?>/login" method="POST">
             <div class="box-input">
                 <i class="fas fa-user"></i>
                 <input type="text" name="fullname" placeholder="Full Name">
@@ -10,10 +10,6 @@
                 <input type="text" name="username" placeholder="Username">
             </div>
             <div class="box-input">
-                <i class="fas fa-graduation-cap"></i>
-                <input type="text" name="institution" placeholder="Institution">
-            </div>
-            <div class="box-input">
                 <i class="fas fa-envelope-open-text"></i>
                 <input type="text" name="email" placeholder="Email">
             </div>
@@ -21,8 +17,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Password">
             </div>
-            <a href="<?= BASEURL;?>/login">
-                <button type="submit" name="register" class="btn-input">Register</button>
+            <button type="submit" name="register" class="btn-input">Register</button>
             </a>
             <div class="bottom">
                 <p>Sudah punya akun?

@@ -1,8 +1,8 @@
 <?php
 
 class UserModel {
-    private $nama = "Maspren";
-    public function getUser() {
+    private $nama = "Maspren"; // Parameter
+    public function getUser() { // Fungsi
         return $this->nama;
     }
 }

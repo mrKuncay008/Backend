@@ -1,21 +1,19 @@
 <?php
 
-class users_list {
-    
+class Mainfunc {
     private $dbh; // database handle = variable connection db
     private $stmt;
 
-    public function __construct() {
-        $ds = 'mysql:host=localhost;dbname=login'; // var DataServer
+    public function __construct() { // Function Koneksi
+        $ds = 'mysql:host=localhost;dbname=Project_002B2'; // var DataServer
         try {
-            $this->dbh = new PDO($ds, 'root', ''); // dbh = (localhost&dbname , username, password)
+            $this->dbh = new PDO($ds, 'root', '0343Ahub6453@'); // dbh = (localhost&dbname , username, password)
         } catch (PDOExeption $e) {
             die($e->getMessage()); // Jika eror maka akan ada notifikasi
         }
     }
-
     public function getAllUsers() {
-        $this->stmt = $this->dbh->prepare('SELECT * FROM user_details ');
+        $this->stmt = $this->dbh->prepare('SELECT * FROM USERS');
         $this->stmt->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     } 
