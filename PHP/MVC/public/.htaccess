@@ -1,5 +1,6 @@
 Options -MultiViews
 RewriteEngine On
+php_value display_errors 1
 
 # Tambahkan aturan untuk memeriksa apakah file atau direktori ada sebelum mengarahkan ke index.php
 RewriteCond %{REQUEST_FILENAME} !-d
