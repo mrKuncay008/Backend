@@ -18,7 +18,7 @@ class App {
             unset($url[0]);
             // echo var_dump($url).'<br>'; // cek array
         }
-        require_once '../app/control/'.$this->control.'.php';
+        require_once __DIR__. '/../control/' . $this->control .'.php';
         $this->control = new $this->control;
 
         //method
