@@ -1,11 +1,11 @@
 // https://api.thecatapi.com/v1/breeds
-const catsApi = 'https://api.thecatapi.com/v1/breeds';
-// const catsApi = 'https://api.thecatapi.com/v1/images/search?limit=20';
+// const catsApi = 'https://api.thecatapi.com/v1/breeds';
+const catsApi = 'https://api.thecatapi.com/v1/images/search?limit=20';
 
-const Obj = ['bomb', 'abys', 'aege', 'abob'];
-const ApiImg = `https://api.thecatapi.com/v1/images/search?breed_ids=${Obj[3]}`;
-
-console.log(ApiImg);
+// const Obj = ['bomb', 'abys', 'aege', 'abob'];
+// const ApiImg = `https://api.thecatapi.com/v1/images/search?breed_ids=${Obj[3]}`;
+// 
+// console.log(ApiImg);
 
 // const fetchData = async () => {
 // 
@@ -50,18 +50,18 @@ const getCat = async () => {
         // const findCat = axiosArr.filter(({temperament}) => temperament == 'Active'); // Mencari Object pertama menurut dari tempat asal
         console.log(axiosArr);
 
-        // axiosArr.forEach (ImageData => {
-        //     
-        //     const image = document.createElement('img');
-        //     const gridCell = document.createElement('div');
-        //     image.src = ImageData.url;
-        //     
-        //     gridCell.classList.add('col');
-        //     gridCell.classList.add('col-lg');
-        //     gridCell.appendChild(image)
-        //     
-        //     document.getElementById('grid').appendChild(gridCell);
-        // });
+        axiosArr.forEach (ImageData => {
+            
+            const image = document.createElement('img');
+            const gridCell = document.createElement('div');
+            image.src = ImageData.url;
+            
+            gridCell.classList.add('col');
+            gridCell.classList.add('col-lg');
+            gridCell.appendChild(image)
+            
+            document.getElementById('grid').appendChild(gridCell);
+        });
         return axiosArr;
 
     } catch (error) {
