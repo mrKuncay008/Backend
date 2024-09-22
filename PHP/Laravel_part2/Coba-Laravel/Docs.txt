@@ -7,6 +7,10 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b3
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
+- Install Project global
+composer global require laravel/installer
+laravel new example-app
+
 - Migrate atau install Project Laravel dari github
 
 1.Run git clone <my-cool-project>
@@ -17,6 +21,14 @@ php -r "unlink('composer-setup.php');"
 6.Run php artisan serve
 7.Go to link localhost:8000
 
+Ekstension VsCode Laravel
+- PHP Intelepsen
+- Laravel artisan
+- Laravel Blade snipset
+- Laravel Blade spacer
+- Laravel Blade snipset
+- Laravel snipset
+- Laravel Gotoview
 
 kuncay@mrkuncay:~/Program/Backend/PHP/Coba-Laravel$ composer diagnose
 Checking composer.json: OK
