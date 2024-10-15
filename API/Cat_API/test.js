@@ -1,6 +1,6 @@
 // https://api.thecatapi.com/v1/breeds
-// const catsApi = 'https://api.thecatapi.com/v1/breeds';
-const catsApi = 'https://api.thecatapi.com/v1/images/search?limit=20';
+const catsApi = 'https://api.thecatapi.com/v1/breeds';
+// const catsApi = 'https://api.thecatapi.com/v1/images/search?limit=20';
 
 // const Obj = ['bomb', 'abys', 'aege', 'abob'];
 // const ApiImg = `https://api.thecatapi.com/v1/images/search?breed_ids=${Obj[3]}`;
