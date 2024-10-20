@@ -18,6 +18,9 @@
           <li class="nav-item">
             <a class="nav-link {{ ($title == "Post") ? 'active':'' }}" href="/post">Post</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ ($title == "Dom") ? 'active':'' }}" href="/dom">Dom</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
               Select Language

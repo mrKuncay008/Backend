@@ -12,4 +12,6 @@ Route::get('/', function () {
 });
 
 Route::get('/about', [allControl::class, 'index']);
-Route::get('/post', [allControl::class, 'index']);
+Route::get('/post', [allControl::class, 'post']);
+Route::get('/dom', [allControl::class, 'dom']);
+Route::get('/list', [allControl::class, 'list']);
