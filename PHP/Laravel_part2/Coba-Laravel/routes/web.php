@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\RegionalController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\RegionalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/regional', [RegionalController::class, 'index'])-> name('regional.index');
+Route::get('/regional/create', [RegionalController::class, 'create'])-> name('regional.create');
+
+Route::post('/regional', [RegionalController::class, 'store'])-> name('regional.store');

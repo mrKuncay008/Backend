@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\About;
 use App\Models\Dom;
 use App\Models\ListInput;
+use App\Models\Regional;
 // use Illuminate\Http\Request;
 
 class allControl extends Controller
@@ -40,6 +41,13 @@ class allControl extends Controller
         return view ('list', [
             'title' => 'List',
             'Lists' => ListInput::all()
+        ]);
+    }
+    
+    public function regional() {
+        return view ('regional', [
+            'title' => 'Regional Page',
+            'regionals' => Regional::all()
         ]);
     }
 }

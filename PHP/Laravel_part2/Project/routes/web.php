@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\allControl;
+use App\Http\Controllers\RegionalController;
 // use App\Models\Post; Sudah di direct ke cotroler
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ Route::get('/about', [allControl::class, 'index']);
 Route::get('/post', [allControl::class, 'post']);
 Route::get('/dom', [allControl::class, 'dom']);
 Route::get('/list', [allControl::class, 'list']);
+Route::get('/regional', [RegionalController::class, 'regional']);
