@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\regional;
+use App\Models\Regional;
 use App\Http\Requests\StoreregionalRequest;
 use App\Http\Requests\UpdateregionalRequest;
 
@@ -15,7 +15,8 @@ class RegionalController extends Controller
      */
     public function index()
     {
-        return view('regional.index');
+        $regionals = Regional::all();
+        return view('regional.index', ['regional'=> $regionals]);
     }
 
     /**
@@ -36,29 +37,18 @@ class RegionalController extends Controller
      */
     public function store(StoreregionalRequest $request)
     {
-        dd($request);
+        $data = $request->validate([
+            'name'=> 'required',
+            'negara'=> 'required'
+        ]);
+
+        $newRegional = Regional::create($data);
+        return redirect(route('regional.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\regional  $regional
-     * @return \Illuminate\Http\Response
-     */
-    public function show(regional $regional)
+    public function edit(Regional $regional)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\regional  $regional
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(regional $regional)
-    {
-        //
+        return view('regional.edit', ['regional' => $regional]);
     }
 
     /**
@@ -70,9 +60,15 @@ class RegionalController extends Controller
      */
     public function update(UpdateregionalRequest $request, regional $regional)
     {
-        //
-    }
+        $data = $request->validate([
+            'name'=> 'required',
+            'negara'=> 'required'
+        ]);
 
+        $regional->edit($data);
+        return redirect(route('regional.index'))->with('success', 'Data is Update');
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -81,6 +77,15 @@ class RegionalController extends Controller
      */
     public function destroy(regional $regional)
     {
+        $regional->delete();
+        return redirect(route('regional.index'))->with('success', 'Data is Delete');
+    }
+
+    public function show(regional $regional)
+    {
         //
     }
+
+    
+
 }

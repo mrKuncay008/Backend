@@ -23,3 +23,8 @@ Route::get('/regional', [RegionalController::class, 'index'])-> name('regional.i
 Route::get('/regional/create', [RegionalController::class, 'create'])-> name('regional.create');
 
 Route::post('/regional', [RegionalController::class, 'store'])-> name('regional.store');
+
+Route::get('/regional/{regional}/edit', [RegionalController::class, 'edit'])-> name('regional.edit');
+Route::get('/regional/{regional}', [RegionalController::class, 'update'])->name('regional.update');
+
+Route::delete('/regional/{regional}', [RegionalController::class, 'destroy'])->name('regional.destroy');

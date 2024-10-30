@@ -2,13 +2,29 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\Regional;
+use App\Models\Regional;
 use Illuminate\Http\Request;
 
-class RegionalController extends Controller
+class RegionalsController extends Controller
 {
     public function index() {
         return view('regional.index');
+    }
+
+    public function create()
+    {
+        return view('regional.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name'=> 'required',
+            'negara'=> 'required'
+        ]);
+
+        $newRegional = regional::create($data);
+        return redirect(route('regional.index'));
     }
 }
 

@@ -6,6 +6,16 @@
 </head>
 <body>
     <h1>Create New Regional</h1>
+    <div>
+        @if($errors->any())
+        <ul>
+            @foreach ($errors->all() as $err)
+                <li>{{ $err }}</li>
+            @endforeach
+        </ul>
+        @endif
+    </div>
+
     <form action={{ route('regional.store') }} method="post">
         @csrf
         @method('post')

@@ -50,3 +50,41 @@ PHP binary path: /usr/bin/php8.3
 OpenSSL version: OpenSSL 1.1.1f  31 Mar 2020
 curl version: 7.68.0 libz 1.2.11 ssl OpenSSL/1.1.1f
 zip: extension present, unzip present, 7-Zip present (7z)
+
+# Migrate
+
+php artisan make:migration tableName
+
+edit databases fieldnya
+```bash
+/**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('regional_table', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('negara');
+            $table->timestamps();
+        });
+    }
+```
+setelah itu buat model
+
+php artisan make:model
+```bash
+class namaModel extends Model
+{
+    use HasFactory;
+    public $table = "nama_table";
+
+    protected $fillable = [
+        'name', // nama field table
+        'negara'
+    ];
+}
+```
+jika ingin membuat table baru tinggal di ulang lagi.
