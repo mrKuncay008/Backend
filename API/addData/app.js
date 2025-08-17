@@ -17,7 +17,7 @@
 //                 Accept: 'application/json',
 //             },
 //         };
-//         const respon = await axios.get('https://icanhazdadjoke.com/search?limit=30',config);
+//         const respon = await axios.get('https://imamrenaldygumay.com/sipwpusri/api/blogs',config);
 //         const joke = respon.data.results; // results adalah jumlah semua array data 
 //         
 //         const jokeList = document.getElementById('joke');
@@ -30,29 +30,49 @@
 //             jokeList.appendChild(textJoke);
 //         });
 //         
-//         // console.log(respon.data.joke)   
+//         console.log(respon);   
 //         // return respon.data;
 // 
 //     } catch (error) {
 //         console.error(`Not Avaible Jokes ${error}`);
 //     }
 // };
-const axios = require('axios');
+// Define the API URL
+const apiUrl = 'https://imamrenaldygumay.com/sipwpusri/api/blogs';
+const jokes = document.querySelector('#joke');
+const tombol = document.querySelector('button');
+const newLi = document.createElement('li');
 
-const jokeFunc = async() => {
-    try {
-        const config = { headers: {
-                            Accept: 'application/json',
-                        },
-                    };
-        const respon = await axios.get('https://icanhazdadjoke.com/search',config);
-        const joke = respon.data.results; // results adalah jumlah semua array data
-        
-        console.log(joke.length);
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
-    } catch (error) {
-        console.error(`Not Avaible Jokes ${error}`);
-    } 
-}
-jokeFunc();
+// const axios = require('axios');
+// 
+// const jokeFunc = async() => {
+//     try {
+//         const config = { headers: {
+//                             Accept: 'application/json',
+//                         },
+//                     };
+//         const respon = await axios.get('https://icanhazdadjoke.com/search',config);
+//         const joke = respon.data.results; // results adalah jumlah semua array data
+//         
+//         console.log(joke.length);
+// 
+//     } catch (error) {
+//         console.error(`Not Avaible Jokes ${error}`);
+//     } 
+// }
+// jokeFunc();
 // tombol.addEventListener('click', addFunc);
